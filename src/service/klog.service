@@ -1,0 +1,13 @@
+[Unit]
+Description=Crash message collector
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/klog start
+ExecStop=/usr/sbin/klog stop
+RemainAfterExit=yes
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target

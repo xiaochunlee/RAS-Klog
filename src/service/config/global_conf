@@ -1,0 +1,9 @@
+
+MODULE="klog"
+
+KERNEL_VERSION=$(uname -r)
+KO_PATH="/lib/modules/${KERNEL_VERSION}/kernel/klog"
+KLOG_KO="klog.ko"
+STORE_DRV="klogdriver.ko"
+
+EVENT_CONFIG_INFO=("x${handle_for_panic}" "x${handle_for_slock}" "x${handle_for_hlock}")

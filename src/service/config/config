@@ -1,0 +1,17 @@
+# This is klog's configuration file.
+# * IMPORTANT *: configure parameters correctly according to the prompt message, the parameters must contain quotes, no spaces inside and outside the quotation marks.
+
+
+############  Abnormal event scenarios, if the option is empty or invalid characters, the default is no  ##############
+
+# Panic events: mainly explicitly call the kernel panic function or abnormal triggering cause kernel oops.
+handle_for_panic="yes"
+
+# Soft deadlock event
+handle_for_slock="yes"
+
+# Hard deadlock event
+handle_for_hlock="yes"
+
+###############  Storage mode ###############
+save_mode="bmc"

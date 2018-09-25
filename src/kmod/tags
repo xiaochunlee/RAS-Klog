@@ -1,0 +1,173 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CONFIG_HARDLOCK_MASK	kfault_core.c	123;"	d	file:
+CONFIG_PANIC_MASK	kfault_core.c	121;"	d	file:
+CONFIG_SAVE_BMC	log_transfer.c	59;"	d	file:
+CONFIG_SAVE_BMC_MASK	kfault_core.c	125;"	d	file:
+CONFIG_SAVE_BMC_MASK	kfault_int.h	6;"	d
+CONFIG_SAVE_BMC_MASK	log_transfer.c	60;"	d	file:
+CONFIG_SAVE_NVM_MASK	kfault_core.c	126;"	d	file:
+CONFIG_SOFTLOCK_MASK	kfault_core.c	122;"	d	file:
+DEBUG	log_transfer.c	19;"	d	file:
+ERROR_CREATE_USER	log_transfer.c	69;"	d	file:
+ERROR_DESTORY_USER	log_transfer.c	71;"	d	file:
+ERROR_READ_DATA	log_transfer.c	65;"	d	file:
+ERROR_READ_LENGTH	log_transfer.c	64;"	d	file:
+ERROR_READ_OVERFLOW	log_transfer.c	66;"	d	file:
+ERROR_REQUEST_SUPPLY_MSGS	log_transfer.c	70;"	d	file:
+ERROR_WRITE_DATA	log_transfer.c	63;"	d	file:
+ERROR_WRITE_LENGTH	log_transfer.c	62;"	d	file:
+ERROR_WRITE_OVERFLOW	log_transfer.c	67;"	d	file:
+FileBufferOffset	log_transfer.c	/^	unsigned int FileBufferOffset;$/;"	m	struct:requestB3	file:
+FileBufferOffset	log_transfer.c	/^	unsigned int FileBufferOffset;$/;"	m	struct:responseB3	file:
+FileBufferlength	log_transfer.c	/^	unsigned char FileBufferlength;$/;"	m	struct:requestB3	file:
+FileBufferlength	log_transfer.c	/^	unsigned char FileBufferlength;$/;"	m	struct:responseB3	file:
+FileCompressSize	log_transfer.c	/^	unsigned int FileCompressSize;$/;"	m	struct:requestB2	file:
+FileCompressSize	log_transfer.c	/^	unsigned int FileCompressSize;$/;"	m	struct:responseB2	file:
+FileOrignalSize	log_transfer.c	/^	unsigned int FileOrignalSize;$/;"	m	struct:requestB2	file:
+FileOrignalSize	log_transfer.c	/^	unsigned int FileOrignalSize;$/;"	m	struct:responseB2	file:
+HARDDEADLOCK_EVENT	kfault_core.c	/^	HARDDEADLOCK_EVENT,$/;"	e	enum:event_type	file:
+HARDDEADLOCK_EVENT	klogparse.c	/^	HARDDEADLOCK_EVENT,$/;"	e	enum:event_type	file:
+KERN_STACK_LENGTH	kfault_core.c	74;"	d	file:
+KFAULT_AREA_LENGTH	kfault_core.c	72;"	d	file:
+KFAULT_KMSG_LEN	kfault_core.c	156;"	d	file:
+KFAULT_RECORDER_HEAD_LENGTH	kfault_core.c	71;"	d	file:
+KMSG_KLOG_GAP	kfault_core.c	76;"	d	file:
+KMSG_LOG_LENGTH	kfault_core.c	73;"	d	file:
+MAX_AREA_ID	kfault_core.c	70;"	d	file:
+MAX_LOG	log_transfer.c	57;"	d	file:
+MAX_STACK_TRACE_DEPTH	kfault_core.c	137;"	d	file:
+PANIC_EVENT	kfault_core.c	/^	PANIC_EVENT,$/;"	e	enum:event_type	file:
+PANIC_EVENT	klogparse.c	/^	PANIC_EVENT,$/;"	e	enum:event_type	file:
+SOFTDEADLOCK_EVENT	kfault_core.c	/^	SOFTDEADLOCK_EVENT,$/;"	e	enum:event_type	file:
+SOFTDEADLOCK_EVENT	klogparse.c	/^	SOFTDEADLOCK_EVENT,$/;"	e	enum:event_type	file:
+STORE_BMC	kfault_core.c	/^	STORE_BMC,$/;"	e	enum:storage_type	file:
+STORE_NET	kfault_core.c	/^	STORE_NET,$/;"	e	enum:storage_type	file:
+STORE_NVRAM	kfault_core.c	/^	STORE_NVRAM,$/;"	e	enum:storage_type	file:
+_KFAULT_INT_H	kfault_int.h	2;"	d
+__KFAULT_LOG_BUF_LEN	kfault_core.c	140;"	d	file:
+__read_data	log_transfer.c	/^static int __read_data(int flags, void *buf, int len, int *reallen)$/;"	f	file:
+__write_data	log_transfer.c	/^static int __write_data(int flags, void *buf, int len, int *reallen)$/;"	f	file:
+_globals	log_transfer.c	/^typedef struct _globals {$/;"	s	file:
+buf	log_transfer.c	/^  unsigned char *buf;$/;"	m	struct:_globals	file:
+cmd	log_transfer.c	/^  unsigned char cmd;$/;"	m	struct:_globals	file:
+completecode	log_transfer.c	/^  unsigned char completecode;$/;"	m	struct:_globals	file:
+compresslen	kfault_int.h	/^	unsigned int compresslen;$/;"	m	struct:recv_data
+compresslen	kfault_int.h	/^	unsigned int compresslen;$/;"	m	struct:send_data
+data	log_transfer.c	/^	unsigned char *data;$/;"	m	struct:requestB3	file:
+data	log_transfer.c	/^	unsigned char *data;$/;"	m	struct:responseB3	file:
+databuf	kfault_core.c	/^	char *  databuf;$/;"	m	struct:kfault_dumper	file:
+dummy_recv_free	log_transfer.c	/^static void dummy_recv_free(struct ipmi_recv_msg *msg)$/;"	f	file:
+dummy_smi_free	log_transfer.c	/^static void dummy_smi_free(struct ipmi_smi_msg *msg)$/;"	f	file:
+dump_recv_msg	log_transfer.c	/^static struct ipmi_recv_msg dump_recv_msg = {$/;"	v	typeref:struct:ipmi_recv_msg	file:
+dump_smi_msg	log_transfer.c	/^static struct ipmi_smi_msg dump_smi_msg = {$/;"	v	typeref:struct:ipmi_smi_msg	file:
+dump_user	log_transfer.c	/^static ipmi_user_t dump_user;$/;"	v	file:
+event_config	kfault_core.c	/^static int event_config = 1;$/;"	v	file:
+event_type	kfault_core.c	/^enum event_type$/;"	g	file:
+event_type	klogparse.c	/^enum event_type$/;"	g	file:
+exit_transfer	log_transfer.c	/^module_exit(exit_transfer);$/;"	v
+exit_transfer	log_transfer.c	/^static void __exit exit_transfer(void)$/;"	f	file:
+g_khead	kfault_core.c	/^struct kfault_header * g_khead;$/;"	v	typeref:struct:kfault_header
+global_data	log_transfer.c	/^static globals global_data;$/;"	v	file:
+globals	log_transfer.c	/^} globals;$/;"	t	typeref:struct:_globals	file:
+handlers	kfault_int.h	/^	struct si_handlers  *handlers;	$/;"	m	struct:kfault_store_info	typeref:struct:kfault_store_info::si_handlers
+hardlockup_panic_config	kfault_core.c	/^static int hardlockup_panic_config =$/;"	v	file:
+init_transfer	log_transfer.c	/^module_init(init_transfer);$/;"	v
+init_transfer	log_transfer.c	/^static int __init init_transfer(void)$/;"	f	file:
+io_dir	log_transfer.c	/^	unsigned char io_dir;$/;"	m	struct:requestB2	file:
+io_dir	log_transfer.c	/^  unsigned char io_dir;$/;"	m	struct:_globals	file:
+ipmi_hndlrs	log_transfer.c	/^static struct ipmi_user_hndl ipmi_hndlrs = {$/;"	v	typeref:struct:ipmi_user_hndl	file:
+ipmi_msg_handler	log_transfer.c	/^static void ipmi_msg_handler(struct ipmi_recv_msg *msg, void *handler_data)$/;"	f	file:
+irq_stats	kfault_core.c	328;"	d	file:
+kcs_handler	log_transfer.c	/^static struct si_handlers kcs_handler = {$/;"	v	typeref:struct:si_handlers	file:
+kcs_media_info	log_transfer.c	/^static struct kfault_store_info kcs_media_info = {$/;"	v	typeref:struct:kfault_store_info	file:
+kernel_log_offset	kfault_core.c	/^	int kernel_log_offset;$/;"	m	struct:kfault_recorder	file:
+kernel_log_offset	klogparse.c	/^	int kernel_log_offset;$/;"	m	struct:kfault_recorder	file:
+kfault_data_sz	kfault_core.c	/^static size_t kfault_data_sz;$/;"	v	file:
+kfault_dumper	kfault_core.c	/^struct kfault_dumper {$/;"	s	file:
+kfault_exit	kfault_core.c	/^module_exit(kfault_exit);$/;"	v
+kfault_exit	kfault_core.c	/^static void __exit kfault_exit(void) $/;"	f	file:
+kfault_get_kernlog	kfault_core.c	/^static void kfault_get_kernlog(struct kmsg_dumper *dumper,$/;"	f	file:
+kfault_harddeadlock_info_callback	kfault_core.c	/^static int kfault_harddeadlock_info_callback(struct notifier_block *nb, unsigned long val, void *data)$/;"	f	file:
+kfault_harddeadlock_nb	kfault_core.c	/^static struct notifier_block kfault_harddeadlock_nb = {$/;"	v	typeref:struct:notifier_block	file:
+kfault_header	kfault_core.c	/^struct kfault_header$/;"	s	file:
+kfault_header	klogparse.c	/^struct kfault_header$/;"	s	file:
+kfault_init	kfault_core.c	/^module_init(kfault_init);$/;"	v
+kfault_init	kfault_core.c	/^static int __init kfault_init(void)   $/;"	f	file:
+kfault_kernlog_data	kfault_core.c	/^static char *kfault_kernlog_data;$/;"	v	file:
+kfault_kmsg_dumper	kfault_core.c	/^static struct kmsg_dumper kfault_kmsg_dumper = {$/;"	v	typeref:struct:kmsg_dumper	file:
+kfault_log_buf	kfault_core.c	/^static char *kfault_log_buf = _kfault_log_buf;$/;"	v	file:
+kfault_panic_info_callback	kfault_core.c	/^static int kfault_panic_info_callback(struct notifier_block *nb, unsigned long val, void *data)$/;"	f	file:
+kfault_panic_nb	kfault_core.c	/^static struct notifier_block kfault_panic_nb = {$/;"	v	typeref:struct:notifier_block	file:
+kfault_recorder	kfault_core.c	/^struct kfault_recorder$/;"	s	file:
+kfault_recorder	klogparse.c	/^struct kfault_recorder$/;"	s	file:
+kfault_softdeadlock_info_callback	kfault_core.c	/^static int kfault_softdeadlock_info_callback(struct notifier_block *nb, unsigned long val, void *data)$/;"	f	file:
+kfault_softdeadlock_nb	kfault_core.c	/^static struct notifier_block kfault_softdeadlock_nb = {$/;"	v	typeref:struct:notifier_block	file:
+kfault_store_info	kfault_int.h	/^struct kfault_store_info {$/;"	s
+klog-objs	Makefile	/^klog-objs := klogparse.o kfault_core.o $/;"	m
+klog_open	klogparse.c	/^static int klog_open(struct inode * inode, struct file * file)$/;"	f	file:
+klog_proc_show	klogparse.c	/^static int klog_proc_show(struct seq_file *m, void *v)  $/;"	f	file:
+klogdriver-objs	Makefile	/^klogdriver-objs := log_transfer.o$/;"	m
+kmsg_area_offset	kfault_core.c	/^	int kmsg_area_offset;$/;"	m	struct:kfault_recorder	file:
+kmsg_area_offset	klogparse.c	/^	int kmsg_area_offset;$/;"	m	struct:kfault_recorder	file:
+kmsg_area_size	kfault_core.c	/^	int kmsg_area_size;$/;"	m	struct:kfault_recorder	file:
+kmsg_area_size	klogparse.c	/^	int kmsg_area_size;$/;"	m	struct:kfault_recorder	file:
+length	kfault_core.c	/^	int length;$/;"	m	struct:kfault_dumper	file:
+maxrecvlen	kfault_int.h	/^	unsigned int maxrecvlen;$/;"	m	struct:recv_data
+obj-m	Makefile	/^obj-m	:= klog.o klogdriver.o$/;"	m
+originlen	kfault_int.h	/^	unsigned int originlen;$/;"	m	struct:recv_data
+originlen	kfault_int.h	/^	unsigned int originlen;$/;"	m	struct:send_data
+parse_kfault_record	klogparse.c	/^int parse_kfault_record(struct seq_file *m, struct kfault_recorder * recordinfo, char * tempbuf)$/;"	f
+parse_kfault_syslog	klogparse.c	/^int parse_kfault_syslog(struct seq_file *m, char * kbuf)$/;"	f
+proc_klog_exit	klogparse.c	/^int proc_klog_exit(void)$/;"	f
+proc_klog_init	klogparse.c	/^int proc_klog_init(void)$/;"	f
+proc_klog_operations	klogparse.c	/^static const struct file_operations proc_klog_operations = {$/;"	v	typeref:struct:file_operations	file:
+read_data	kfault_int.h	/^	int (*read_data)(struct recv_data *log, int *reallen);$/;"	m	struct:si_handlers
+read_data	log_transfer.c	/^static int read_data(struct recv_data *log, int *reallen)$/;"	f	file:
+reallen	log_transfer.c	/^  unsigned int reallen;$/;"	m	struct:_globals	file:
+rec_count	kfault_core.c	/^	int rec_count;$/;"	m	struct:kfault_header	file:
+rec_count	klogparse.c	/^	int rec_count;$/;"	m	struct:kfault_header	file:
+recv_data	kfault_int.h	/^struct recv_data {$/;"	s
+recvbuf	kfault_int.h	/^	unsigned char *recvbuf;$/;"	m	struct:recv_data
+register_store_media	kfault_core.c	/^ EXPORT_SYMBOL(register_store_media);$/;"	v
+register_store_media	kfault_core.c	/^ void register_store_media(struct kfault_store_info * si_media)$/;"	f
+requestB2	log_transfer.c	/^typedef struct requestB2 {$/;"	s	file:
+requestB2_t	log_transfer.c	/^} __attribute__((packed)) requestB2_t;$/;"	t	typeref:struct:requestB2	file:
+requestB3	log_transfer.c	/^typedef struct requestB3 {$/;"	s	file:
+requestB3_t	log_transfer.c	/^} __attribute__((packed)) requestB3_t;$/;"	t	typeref:struct:requestB3	file:
+reserved	kfault_core.c	/^	unsigned long reserved[4];$/;"	m	struct:kfault_header	file:
+reserved	klogparse.c	/^	unsigned long reserved[4];$/;"	m	struct:kfault_header	file:
+responseB2	log_transfer.c	/^typedef struct responseB2 {$/;"	s	file:
+responseB2_t	log_transfer.c	/^} __attribute__((packed)) responseB2_t;$/;"	t	typeref:struct:responseB2	file:
+responseB3	log_transfer.c	/^typedef struct responseB3 {$/;"	s	file:
+responseB3_t	log_transfer.c	/^} __attribute__((packed)) responseB3_t;$/;"	t	typeref:struct:responseB3	file:
+save_call_trace	kfault_core.c	/^void save_call_trace(struct kfault_recorder * panic_rec, void * tracebuf, int *len)$/;"	f
+save_kernel_stack	kfault_core.c	/^void save_kernel_stack(struct kfault_recorder * panic_rec, void * stackbuf, int *len)$/;"	f
+save_kfault_interrputs	kfault_core.c	/^void save_kfault_interrputs(struct kfault_recorder * panic_rec, void * intrbuf, int *len)$/;"	f
+save_kfault_module_info	kfault_core.c	/^void save_kfault_module_info(struct kfault_recorder * panic_rec, void * modbuf, int *len)$/;"	f
+save_mc_regs	kfault_core.c	/^void save_mc_regs(struct pt_regs * regs, void * regsbuf, int * len)$/;"	f
+save_mode	kfault_core.c	/^static int save_mode = 1;$/;"	v	file:
+save_mode	kfault_int.h	/^	int           save_mode;$/;"	m	struct:kfault_store_info
+save_mode	log_transfer.c	/^static int  save_mode = 0;$/;"	v	file:
+send_data	kfault_int.h	/^struct send_data {$/;"	s
+sendbuf	kfault_int.h	/^	unsigned char *sendbuf;$/;"	m	struct:send_data
+si_handlers	kfault_int.h	/^struct si_handlers {	$/;"	s
+si_info_link	kfault_int.h	/^	struct list_head       si_info_link;$/;"	m	struct:kfault_store_info	typeref:struct:kfault_store_info::list_head
+si_infos	kfault_core.c	/^struct list_head si_infos;$/;"	v	typeref:struct:list_head
+softlockup_panic_config	kfault_core.c	/^unsigned int __read_mostly softlockup_panic_config =$/;"	v
+storage_type	kfault_core.c	/^ enum storage_type$/;"	g	file:
+times	log_transfer.c	/^  unsigned int times;$/;"	m	struct:_globals	file:
+timestamp	kfault_core.c	/^	unsigned long timestamp;$/;"	m	struct:kfault_dumper	file:
+tm	kfault_core.c	/^	struct rtc_time tm;    $/;"	m	struct:kfault_recorder	typeref:struct:kfault_recorder::rtc_time	file:
+tm	klogparse.c	/^	struct rtc_time tm;    $/;"	m	struct:kfault_recorder	typeref:struct:kfault_recorder::rtc_time	file:
+type	kfault_core.c	/^	enum event_type type;$/;"	m	struct:kfault_dumper	typeref:enum:kfault_dumper::event_type	file:
+type	kfault_core.c	/^   enum event_type type; $/;"	m	struct:kfault_recorder	typeref:enum:kfault_recorder::event_type	file:
+type	klogparse.c	/^   enum event_type type; $/;"	m	struct:kfault_recorder	typeref:enum:kfault_recorder::event_type	file:
+unregister_store_media	kfault_core.c	/^ EXPORT_SYMBOL(unregister_store_media);$/;"	v
+unregister_store_media	kfault_core.c	/^ void unregister_store_media(struct kfault_store_info * si_media)$/;"	f
+write_data	kfault_int.h	/^	int (*write_data)(struct send_data *log, int *reallen);$/;"	m	struct:si_handlers
+write_data	log_transfer.c	/^static int write_data(struct send_data *log, int *reallen)$/;"	f	file:

@@ -1,0 +1,155 @@
+#! /bin/sh
+#
+# Copyright (C)2017-2018 inspur Inc. <http://www.inspur.com>
+#    FileName: klogload
+#      Author: Inspur RAS Team <changxch@inspur.com>
+#        Date: 2017-08-08
+# Description: parse config and insmod klog module
+#
+
+save_mode_types=("bmc")
+
+
+config_file="/etc/klog/config"
+test -f ${config_file} && . ${config_file} || { echo "$0: ERROR: ${config_file} is not exist"; exit 1; }
+
+global_conf="/etc/klog/global_conf"
+test -f ${global_conf} && . ${global_conf} || { echo "$0: ERROR: ${global_conf}} is not exist"; exit 1; }
+
+
+function precheck()
+{
+	# check whether the "klog.ko" is existent
+	[ ! -f ${KO_PATH}/${KLOG_KO} ] && { echo "$0: ERROR: module ${KO_PATH}/${KLOG_KO} is not exist"; exit 1; }
+
+	# check whether the klog driver is existent
+	[ ! -f ${KO_PATH}/${STORE_DRV} ] && { echo "$0: ERROR: module ${KO_PATH}/${STORE_DRV} is not exist"; exit 1; }
+	
+	# check whether the "klog.ko" is already inserted
+	mod_name=`lsmod | awk '{print $1}' | grep -w "${MODULE}"`
+	if [ "X${mod_name}" != "X" ]
+	then
+		echo "$0: INFO: ${KLOG_KO} is already inserted"
+		exit 1
+	fi
+	
+	# check whether the klog driver is already inserted
+	mod_name=`lsmod | awk '{print $1}' | grep -w "${STORE_DRV}"`
+	if [ "X${mod_name}" != "X" ]
+	then
+		echo "$0: INFO: ${STORE_DRV} is already inserted"
+		exit 1
+	fi
+}
+
+#event mask:
+#
+#	handle_for_panic = 0x01
+#	handle_for_slock = 0x02
+#	handle_for_hlock = 0x04
+#
+event_config=0
+function check_event_config()
+{
+	local base=0x01
+	
+	for var in $@
+	do
+		if [ "${var}" = "xyes" ] || [ "${var}" = "xYES" ]
+		then
+			event_config=$((${event_config}|${base}))
+		fi
+		
+		base=$((base << 1))
+	done
+	
+	[ "${event_config}" == "0" ] && { echo "$0: ERROR: no events have been configured."; exit 1; }
+}
+
+#save mode:
+#
+#	bmc    =    0x01
+#	bios        //todo
+#	pcie
+#	nvdimm
+#
+save_mode_config=0
+function check_save_mode()
+{
+	local flags=0
+	local i=0
+	local base=0x01
+	
+	if [ "X${save_mode}" = "X" ]
+	then
+		echo "$0: ERROR: no save mode have been configured."
+		exit 1
+	fi
+	
+	# Detection model is valid
+	for var in ${save_mode_types[@]}
+	do
+		if [ ${save_mode} = ${var} ]
+		then
+			flags=1
+			break
+		fi
+		
+		let i++
+	done
+	
+	if [ ${flags} -eq 0 ]
+	then
+		echo "$0: ERROR: this ${save_mode} save mode is not supported"
+		exit 1
+	else
+		save_mode_config=$((base << $i))
+	fi
+}
+
+function rmmod_klog_ko()
+{
+	/sbin/rmmod ${KLOG_KO}
+}
+
+function insmod_klog_ko()
+{
+	# insmod klog.ko
+	/sbin/insmod  ${KO_PATH}/${KLOG_KO}          \
+		      event_config="${event_config}"
+
+	if [ $? -ne 0 ]
+	then
+		echo "$0: ERROR: failed to insmod ${KLOG_KO}!"
+		exit 1
+	fi
+}
+
+function insmod_driver()
+{
+	# insmod kolg driver
+	/sbin/insmod  ${KO_PATH}/${STORE_DRV}          \
+		      save_mode="${save_mode_config}"
+
+	if [ $? -ne 0 ]
+	then
+		rmmod_klog_ko
+		echo "$0: ERROR: failed to insmod ${STORE_DRV}!"
+		exit 1
+	fi	
+}
+
+# pre-check
+precheck
+
+# get event config
+check_event_config ${EVENT_CONFIG_INFO[@]}
+
+check_save_mode
+
+insmod_klog_ko
+
+insmod_driver
+
+echo "${MODULE}: klog module has been inserted successfully!"
+exit 0

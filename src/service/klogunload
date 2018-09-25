@@ -1,0 +1,64 @@
+#! /bin/sh
+#
+# Copyright (C)2017-2018 inspur Inc. <http://www.inspur.com>
+#    FileName: klogunload
+#      Author: Inspur RAS Team <changxch@inspur.com>
+#        Date: 2017-08-08
+# Description: rmmod klog module
+#
+
+config_file="/etc/klog/config"
+test -f ${config_file} && . ${config_file}
+
+global_conf="/etc/klog/global_conf"
+test -f ${global_conf} && . ${global_conf}
+
+
+# check whether the "klog.ko" is existent
+mod_name=`lsmod | awk '{print $1}' | grep -w "${MODULE}"`
+if [ X${mod_name} = "X" ]
+then
+	echo "$0: ERROR: ${KLOG_KO} not in the system"
+	exit 1
+fi
+
+# check whether the "klog_driver.ko" is existent
+store_drv_name=${STORE_DRV%.*}
+mod_name=`lsmod | awk '{print $1}' | grep -w "${store_drv_name}"`
+if [ X${mod_name} != "X" ]
+then
+	# klog_driver.ko in use
+	mod_ref=`cat /proc/modules | grep -w "^${store_drv_name}" | awk '{print $3}'`
+	if [ ${mod_ref} -ne 0 ]
+	then
+		echo "$0: ERROR: ${STORE_DRV} is in use! failed to remove the module."		
+		exit 1
+	fi
+
+	#remove klog driver
+	/sbin/rmmod ${STORE_DRV}
+	if [ $? -ne 0 ]
+	then
+		echo "$0: ERROR: failed to remove ${STORE_DRV}"
+		exit 1
+	fi
+fi
+
+# klog.ko in use
+mod_ref=`cat /proc/modules | grep -w "^${MODULE}" | awk '{print $3}'`
+if [ ${mod_ref} -ne 0 ]
+then
+	echo "$0: ERROR: ${KLOG_KO} is in use! failed to remove the module."		
+	exit 1
+fi
+
+# remove klog.ko
+/sbin/rmmod ${MODULE}
+if [ $? -ne 0 ]
+then
+	echo "$0: ERROR: failed to remove ${MODULE}"
+	exit 1
+fi
+
+echo "${MODULE}: klog module has been remove successfully!"
+exit 0
